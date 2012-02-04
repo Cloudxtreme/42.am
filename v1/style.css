@@ -486,7 +486,7 @@ h4 {
 }
 
 .sphere-a {
-  border: 2px solid black;
+  border: 5px solid black;
   width: 600px;
   height: 600px;
   border-radius: 300px;
@@ -509,6 +509,18 @@ h4 {
 .sphere-c {
   #top: -50%;
   #position: relative;
+}
+
+.sphere-d {
+  background: rgba(128, 0, 0, .5);
+  width: 600px;
+  height: 600px;
+  position: relative;
+  border-radius: 300px;
+  border: 5px solid black;
+  top: 0;
+  left: 0;
+  padding: 0 !important;
 }
 
 .orbit > .center {

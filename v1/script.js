@@ -50,7 +50,7 @@ $(function() {
                                      });
                        });
 
-      //$('#nav').show();
+      $('#nav').show();
 
       $('.center.sphere').hide();
 
@@ -112,8 +112,8 @@ $(function() {
 
       $('.sphere').each(function() {
                             var _this = $(this);
-                            _this.addClass('sphere-a');
-                            _this.html('<div class="sphere-b"><div class="sphere-c">' + _this.html() + '</div></div>');
+                            _this.addClass('sphere-z');
+                            _this.html('<div class="sphere-a"><div class="sphere-b"><div class="sphere-c">' + _this.html() + '</div></div></div><div class="sphere-d"></div>');
                         });
 
       $("#jmpress a[href]:not(:has(>img))").addClass("ui-state-default ui-corner-all");
