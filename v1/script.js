@@ -11,44 +11,51 @@ $(function() {
 		    ,scale: 0.3
 	        });
 
-      //$.jmpress("apply", "#fortytwoam", { scale: 0.01 });
+
+      //$('#fortytwoam, #team, #partners').hide();
+
+      var circlize = function(container) {
+          container.each(function() {
+                             var _this = $(this);
+                             var _children = $('> .sphere:not(.center)', _this);
+                             var _length = _children.length;
+                             var _distance = 600;
+                             var _z = 1000;
+                             _rand = Math.random() * 360;
+                             //console.log(_this);
+                             //_this.css('background', 'red');
+                             //console.log('#' + _this.attr('id'));
+                             children = [];
+                             for (var i = 0; i < _length; i++) {
+                                 var deg = (_rand + 360 * i / _length) % 360;
+                                 x = _distance * Math.cos((deg / 180) * Math.PI);
+                                 y = _distance * Math.sin((deg / 180) * Math.PI);
+                                 //console.log('x: ' + x + ', y: ' + y + ', deg: ' + deg);
+                                 children.push({
+                                                   rotate: deg,
+                                                   scale: 0.7,
+                                                   x: x,
+                                                   y: y,
+                                                   z: 1
+                                               });
+                             }
+                             $.jmpress("apply", '#' + _this.attr('id'), {
+                                           children: children,
+                                           scale: 3,
+                                           x: 0,
+                                           z: 1000
+                                       });
+                         });
+      };
+
       $.jmpress("apply", "#companies", { scale: 5 });
       $.jmpress("apply", "#partners", { scale: 2.3 });
       $.jmpress("apply", "#team", { scale: 1 });
 
-      //$('#fortytwoam, #team, #partners').hide();
+      circlize($('#team'));
+      circlize($('#partners'));
+      circlize($('#companies'));
 
-      $('.orbit').each(function() {
-                           var _this = $(this);
-                           var _children = $('> .sphere:not(.center)', _this);
-                           var _length = _children.length;
-                           var _distance = 600;
-                           var _z = 1000;
-                           _rand = Math.random() * 360;
-                           //console.log(_this);
-                           //_this.css('background', 'red');
-                           //console.log('#' + _this.attr('id'));
-                           children = [];
-                           for (var i = 0; i < _length; i++) {
-                               var deg = (_rand + 360 * i / _length) % 360;
-                               x = _distance * Math.cos((deg / 180) * Math.PI);
-                               y = _distance * Math.sin((deg / 180) * Math.PI);
-                               //console.log('x: ' + x + ', y: ' + y + ', deg: ' + deg);
-                               children.push({
-                                                 rotate: deg,
-                                                 scale: 0.7,
-                                                 x: x,
-                                                 y: y,
-                                                 z: 1
-                                             });
-                           }
-                           $.jmpress("apply", '#' + _this.attr('id'), {
-                                         children: children,
-                                         scale: 3,
-                                         x: 0,
-                                         z: 1000
-                                     });
-                       });
 
       $('#nav').show();
 
