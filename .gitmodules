@@ -1,0 +1,3 @@
+[submodule "v1/jmpress.js"]
+	path = v1/jmpress.js
+	url = https://github.com/shama/jmpress.js.git
