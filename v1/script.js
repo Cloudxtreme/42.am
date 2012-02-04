@@ -50,7 +50,7 @@ $(function() {
                                      });
                        });
 
-      //$('#nav').show();
+      $('#nav').show();
 
       $('.center.sphere').hide();
 
