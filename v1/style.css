@@ -512,14 +512,14 @@ h4 {
 }
 
 .sphere-d {
-  background: rgba(128, 0, 0, .5);
+  background: rgba(64, 0, 64, .1);
   width: 600px;
   height: 600px;
-  position: relative;
+  position: absolute;
   border-radius: 300px;
   border: 5px solid black;
-  top: 0;
-  left: 0;
+  top: 40px;
+  /*#left: 0;*/
   padding: 0 !important;
 }
 
