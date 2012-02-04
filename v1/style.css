@@ -484,3 +484,29 @@ h4 {
 #jmpress.step-overview .step:hover {
     opacity: 1;
 }
+
+.orbit > .step {
+  border: 2px solid black;
+  width: 800px;
+  height: 800px;
+  border-radius: 400px;
+  /*background-color: rgba(128, 128, 128, 0.1);*/
+  background-color: rgba(255, 255, 255, .5);
+  display: table;
+  #position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.orbit > .step .inner-a {
+  #top: 50%;
+  #position: absolute;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.orbit > .step .inner-a .inner-b {
+  #top: -50%;
+  #position: relative;
+}

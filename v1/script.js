@@ -93,6 +93,11 @@ $(function() {
 		           return false;
 	               });
 
+      $('.orbit > .step').each(function() {
+                                   var _this = $(this);
+                                   _this.html('<div class="inner-a"><div class="inner-b">' + _this.html() + '</div></div>');
+                               });
+
       $("#jmpress a[href]:not(:has(>img))").addClass("ui-state-default ui-corner-all");
       $("#nav a, #nav-themes a").addClass("ui-button ui-widget ui-state-default");
       $("#nav a span").addClass("ui-button-text");
