@@ -520,3 +520,7 @@ opacity: 0;
 /*.orbit.active > .center {
   display: table !important;
 }*/
+
+#nav {
+  display: none;
+}
