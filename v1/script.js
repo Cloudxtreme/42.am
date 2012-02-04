@@ -93,10 +93,10 @@ $(function() {
 		           return false;
 	               });
 
-      $("#jmpress a[href]").addClass("ui-state-default ui-corner-all");
+      $("#jmpress a[href]:not(:has(>img))").addClass("ui-state-default ui-corner-all");
       $("#nav a, #nav-themes a").addClass("ui-button ui-widget ui-state-default");
       $("#nav a span").addClass("ui-button-text");
-      $("#jmpress a[href], #nav a, #nav-themes a").hover(function() {
+      $("#jmpress a[href]:not(:has(>img)), #nav a, #nav-themes a").hover(function() {
 		                                             $(this).addClass("ui-state-hover");
 	                                                 }, function() {
 		                                             $(this).removeClass("ui-state-hover");
