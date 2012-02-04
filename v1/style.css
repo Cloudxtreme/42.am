@@ -512,9 +512,11 @@ h4 {
 }
 
 .orbit > .center {
-  display: none;
+  display: table !important;
+/*  display: none;*/
+opacity: 0;
 }
 
-.orbit.active > .center {
+/*.orbit.active > .center {
   display: table !important;
-}
+}*/

@@ -52,7 +52,7 @@ $(function() {
 
       $('#nav').hide();
 
-      //$('.center.sphere').hide();
+      $('.center.sphere').hide();
 
 
       //$('#jmpress').jmpress("route", ["#companies", "#partners"]);
@@ -65,10 +65,19 @@ $(function() {
 	      width: 1000,
 	      maxScale: 1
 	  },
-	  setActive: function( slide ) {
+	  setInactive: function(slide) {
+              if ($(slide).hasClass('orbit')) {
+                  $('> .center', slide).stop().animate({opacity: 0}, 1000);
+              }
+          },
+	  setActive: function(slide) {
+              if ($(slide).hasClass('orbit')) {
+                  $('> .center', slide).stop().animate({opacity: 1}, 2000);
+              }
+
 	      $('#nav a')
-		  .removeClass( 'ui-state-active' )
-		  .parent( 'li' )
+		  .removeClass('ui-state-active')
+		  .parent('li')
 		  .removeClass( 'active' );
 	      var id = $(slide).attr('id');
 	      var idArr = id.split("-");
@@ -77,9 +86,9 @@ $(function() {
 		  if(id) id += "-";
 		  id += idArr[i];
 		  $('#nav a[href=\"#' + id + '\"]')
-		      .addClass( 'ui-state-active' )
-		      .parent( 'li' )
-		      .addClass( 'active' );
+		      .addClass( 'ui-state-active')
+		      .parent('li')
+		      .addClass('active');
 	      }
 	  },
 	  afterStepLoaded: function( step, eventData ) {
