@@ -487,9 +487,9 @@ h4 {
 
 .orbit > .step {
   border: 2px solid black;
-  width: 800px;
-  height: 800px;
-  border-radius: 400px;
+  width: 600px;
+  height: 600px;
+  border-radius: 300px;
   /*background-color: rgba(128, 128, 128, 0.1);*/
   background-color: rgba(255, 255, 255, .5);
   display: table;
