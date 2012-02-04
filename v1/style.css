@@ -510,3 +510,11 @@ h4 {
   #top: -50%;
   #position: relative;
 }
+
+.orbit > .center {
+  display: none;
+}
+
+.orbit.active > .center {
+  display: table !important;
+}

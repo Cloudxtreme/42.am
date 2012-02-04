@@ -12,31 +12,34 @@ $(function() {
 	        });
 
       //$.jmpress("apply", "#fortytwoam", { scale: 0.01 });
-      //$.jmpress("apply", "#companies", { scale: 5 });
-      //$.jmpress("apply", "#partners", { scale: 0.03 });
-      //$.jmpress("apply", "#team", { scale: 0.04 });
+      $.jmpress("apply", "#companies", { scale: 5 });
+      $.jmpress("apply", "#partners", { scale: 2.3 });
+      $.jmpress("apply", "#team", { scale: 1 });
 
       //$('#fortytwoam, #team, #partners').hide();
 
       $('.orbit').each(function() {
                            var _this = $(this);
-                           var _children = $('> .step', _this);
+                           var _children = $('> .sphere:not(.center)', _this);
                            var _length = _children.length;
+                           var _distance = 600;
+                           var _z = 1000;
                            _rand = Math.random() * 360;
-                           console.log(_this);
+                           //console.log(_this);
                            //_this.css('background', 'red');
-                           console.log('#' + _this.attr('id'));
+                           //console.log('#' + _this.attr('id'));
                            children = [];
                            for (var i = 0; i < _length; i++) {
                                var deg = (_rand + 360 * i / _length) % 360;
-                               x = 600 * Math.cos((deg / 180) * Math.PI);
-                               y = 600 * Math.sin((deg / 180) * Math.PI);
-                               console.log('x: ' + x + ', y: ' + y + ', deg: ' + deg);
+                               x = _distance * Math.cos((deg / 180) * Math.PI);
+                               y = _distance * Math.sin((deg / 180) * Math.PI);
+                               //console.log('x: ' + x + ', y: ' + y + ', deg: ' + deg);
                                children.push({
                                                  rotate: deg,
                                                  scale: 0.7,
                                                  x: x,
-                                                 y: y
+                                                 y: y,
+                                                 z: 1
                                              });
                            }
                            $.jmpress("apply", '#' + _this.attr('id'), {
@@ -47,9 +50,14 @@ $(function() {
                                      });
                        });
 
-      $('#jmpress').jmpress("route", ["#companies", "#partners"]);
-      $('#jmpress').jmpress("route", ["#partners", "#team"]);
-      $('#jmpress').jmpress("route", ["#team", "#overview"]);
+      $('#nav').hide();
+
+      //$('.center.sphere').hide();
+
+
+      //$('#jmpress').jmpress("route", ["#companies", "#partners"]);
+      //$('#jmpress').jmpress("route", ["#partners", "#team"]);
+      //$('#jmpress').jmpress("route", ["#team", "#overview"]);
 
       var jmpressConfig = {
 	  viewPort: {
