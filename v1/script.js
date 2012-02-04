@@ -93,10 +93,11 @@ $(function() {
 		           return false;
 	               });
 
-      $('.orbit > .step').each(function() {
-                                   var _this = $(this);
-                                   _this.html('<div class="inner-a"><div class="inner-b">' + _this.html() + '</div></div>');
-                               });
+      $('.sphere').each(function() {
+                            var _this = $(this);
+                            _this.addClass('sphere-a');
+                            _this.html('<div class="sphere-b"><div class="sphere-c">' + _this.html() + '</div></div>');
+                        });
 
       $("#jmpress a[href]:not(:has(>img))").addClass("ui-state-default ui-corner-all");
       $("#nav a, #nav-themes a").addClass("ui-button ui-widget ui-state-default");

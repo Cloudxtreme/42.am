@@ -179,7 +179,7 @@ h4 {
 
 /** COMMON STEP STYLES **/
 .step, .nested-step {
-	width: 900px;
+	/*width: 900px;*/
 	min-height: 50px;
 	padding: 40px;
 	z-index: 2;
@@ -485,7 +485,7 @@ h4 {
     opacity: 1;
 }
 
-.orbit > .step {
+.sphere-a {
   border: 2px solid black;
   width: 600px;
   height: 600px;
@@ -498,7 +498,7 @@ h4 {
   padding: 0 !important;
 }
 
-.orbit > .step .inner-a {
+.sphere-b {
   #top: 50%;
   #position: absolute;
   display: table-cell;
@@ -506,7 +506,7 @@ h4 {
   text-align: center;
 }
 
-.orbit > .step .inner-a .inner-b {
+.sphere-c {
   #top: -50%;
   #position: relative;
 }
